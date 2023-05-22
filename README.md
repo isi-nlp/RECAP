@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 # Data
 
-The data is extracted from the Reddit dump from [pushshift.io](https://pushshift.io/). To preserve persona and personal writing style as much as possible, we did not filter out conversations with unethical content. You can download the raw data through this link.
+The data is extracted from the Reddit dump from [pushshift.io](https://pushshift.io/). To preserve persona and personal writing style as much as possible, we did not filter out conversations with unethical content. You can download the raw data from the link [here](https://drive.google.com/file/d/1YC43Pqn15E7IIb90hjtauqRbwCOqAi3x/view?usp=sharing).
 
 # Pre-processing
 
@@ -106,4 +106,14 @@ python src/generated.py \
     --save_path <save_path> \
     --injection_mode <(optional) concat OR context-prefix> \
     --ref_type <(optional) style OR semantic>
+```
+
+## Evaluate
+
+```bash
+python src/eval.py \
+    --generated_path <generated_responses_path> \
+    --dataset_path <data_path> \
+    --cache_dir <eval_cache_dir> \
+    --cav_samples <eval_cav_samples_file>
 ```
