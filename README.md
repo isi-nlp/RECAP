@@ -1,6 +1,6 @@
 # RECAP
 
-The official repository for the ACL 2023 paper "Retrieval-Enhanced Context-Aware Prefix Encoder for Personalized Dialogue Response Generation".
+The official repository for the ACL 2023 paper "RECAP: Retrieval-Enhanced Context-Aware Prefix Encoder for Personalized Dialogue Response Generation".
 
 # Installation
 
