@@ -110,6 +110,8 @@ python src/generated.py \
 
 ## Evaluate
 
+Please download the bleurt checkpoint BLEURT-20-D3 from [here](https://github.com/google-research/bleurt) before running the evaluation.
+
 ```bash
 python src/eval.py \
     --generated_path <generated_responses_path> \
