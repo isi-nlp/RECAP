@@ -10,7 +10,7 @@ from nltk.tokenize import word_tokenize
 from nltk.translate.bleu_score import sentence_bleu, corpus_bleu
 from ignite.metrics import RougeL
 from nltk.translate.meteor_score import meteor_score
-from evaluate import load
+from bleurt import score as bleurt_score
 from bert_score import score as compute_bert_score
 
 import torch
@@ -152,8 +152,8 @@ if __name__ == "__main__":
         combined_txts += gen_txts[author_id]
 
     # BLEURT
-    bleurt = load('bleurt', 'BLEURT-20-D3')
-    bleurt_result = bleurt.scorer.score(candidates=combined_txts, references=combined_refs)
+    scorer = bleurt_score.BleurtScorer('BLEURT-20-D3') # please download the bleurt checkpoint from https://github.com/google-research/bleurt
+    bleurt_result = scorer.score(references=combined_refs, candidates=combined_txts)
     print(f"BELURT: {np.mean(bleurt_result):.4f}")
 
     # BERTScore
